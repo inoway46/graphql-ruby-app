@@ -32,7 +32,16 @@ module GraphqlRubyApp
     # config.eager_load_paths << Rails.root.join("extras")
 
     # Don't generate system test files.
-    config.generators.system_tests = nil
+    config.generators do |g|
+      g.test_framework :rspec,
+        model_specs: true,
+        request_spec: true,
+        fixtures: true,
+        controller_specs: false,
+        helper_specs: false,
+        routing_specs: false,
+        view_specs: false
+    end
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
   end
