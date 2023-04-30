@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Link, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'sample test' do
+    link = Link.new(url: 'https://example.com', description: 'test')
+    expect(link.valid?).to be true
+  end
 end
