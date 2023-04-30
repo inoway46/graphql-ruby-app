@@ -41,8 +41,6 @@ module GraphqlRubyApp
         helper_specs: false,
         routing_specs: false,
         view_specs: false
-      end
-      g.factory_bot dir: "spec/factories"
     end
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
